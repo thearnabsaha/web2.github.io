@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+/* utility classes--------------------------------------------------------------------- */
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+.btn{
+    display: inline-block;   
+    padding: .7em 2em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btnPrimary{
+    color: #fff;
+    background-color: #16a083;
+}
+.btnPrimary:hover{
+    background-color: #fff;
+    color: #117964;
+    border: 3px solid #117964;
+}
+
+/* navber------------------------------------------------------------------ */
+/* for desktop mode------------------------------------------------- */
+.navbar input[type ="checkbox"],
+.navbar .hamburgerLines{
+    display: none;
+}
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 999;
+}
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+.menuItems{
+    order: 2;
+    display: flex;
+    list-style: none;
+}
+.menuItems li{
+    font-size: 3.2rem;
+    padding: .2em;
+}
+.menuItems a{
+    color: #444;
+    text-decoration: none;
+    font: 500;
+    transition: color 0.3s ease-in-out;
+}
+.menuItems a:hover{
+    color: #117964;
+    border-bottom: 1px #117964 solid;
+}
+.logo{
+    order: 1;
+    font-size: 3rem;
+    margin-right: 15em;
+}
+/* showcase--------------------------------------------------------------------- */
+.showcaseArea{
+    height: 50vh;
+    background: url(./6obis/header-image2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.showcaseContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 3.5rem;
+}
+.showcaseContainer .mainTitle{
+    text-transform: uppercase;
+}
+/* about us part----------------------------------------------------------- */
+#about{
+    padding: 50px 0px;
+    background: #f5f5f5;
+}
+.aboutWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+#about p{
+    font-size: 1.6rem;
+    color: #555;
+}
+#about .small{
+    font-size: 1.6rem;
+    color: #666;
+    font-weight: 600;
+}
+#about h2{
+    font-size: 3.2rem;
+    color: #444;
+    font-weight: 600;
+}
+.aboutImg{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: aboutImgAnimation .7s  forwards ease-in-out;
+}
+@keyframes aboutImgAnimation{
+    100%{
+        transform: translateX(0%);
+    }
+}
+.aboutText{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: aboutTextAnimation .7s  forwards ease-in-out;
+}
+@keyframes aboutTextAnimation{
+    100%{
+        transform: translateX(0%);
+    }
+}
+.aboutImg img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: right;
+}
+/* food catagory------------------------------------------------------------------ */
+#food{
+    padding: 5rem 0 10rem 0;
+}
+#food h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #555;
+}
+.foodContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.foodContainer img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.imgContainer{
+    margin: 0 1rem;
+    position: relative;
+}
+.imgContent{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    transition: all 0.3s ease-in-out .1s;
+}
+.imgContent h3{
+    color: #fff;
+    font-size: 3rem;
+}
+.imgContent a{
+    font-size: 1.2rem;
+}
+.imgContainer::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.699);
+    opacity: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+.imgContainer:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.imgContainer:hover .imgContent{
+    opacity: 1;
+    top: 40%;
+}
+/* food menu---------------------------------------------------------------- */
+.foodMenuHeading{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 400;
+    color: #666;
+}
+.foodMenuContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+.foodMenuContainer img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.foodMenuItem{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.foodDescription{
+    margin: auto 1.5rem;
+}
+.foodTitle{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444;
+}
+.foodDescription p{
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
+.foodDescription .foodPrice{
+    color: #117964;
+    font-weight: 700;
+}
+/* testimonials------------------------------------------------------- */
+#testimonials{
+    padding: 5rem 0;
+    background-color: rgb(236, 236, 236);
+}
+.testimonialTitle{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #555;
+}
+.testimonialContainer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 5rem;
+    padding: 1rem;
+}
+.testimonialBox .testimonialText{
+    margin: 1rem 0;
+    color: #444;
+}
+.testimonialBox{
+    text-align: center;
+    padding: 1rem;
+}
+.customerName{
+    font-size: 3rem;
+}
+.customerPhoto img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto;
+}
+/* contact us----------------------------------------------------- */
+#contact{
+    padding: 5rem 0;
+    background-color: rgb(228, 228, 228);
+}
+.contactContainer{
+    display: flex;
+    background-color: #fff;
+}
+.contactImg img{
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.formContainer{
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+.formContainer input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.formContainer textarea{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+    font-size: 1rem;
+}
+.formContainer h2{
+    font-size: 3rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 1rem;
+}
+.formContainer a{
+    font-size: 1.2rem;
+}
+#footer h2{
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(68, 68, 68);
+}
+/* responsive website============================================ */
+@media(max-width: 768px){
+    .navber{
+        opacity: 0.95;
+    }
+    .navbarContainer input[type="checkbox"],.navbarContainer .hamburgerLines{
+        display: block;
+    }
+    .navbarContainer{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+    .navbarContainer input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+    }
+
+    .navbarContainer .hamburgerLines{
+        height: 32px;
+        width: 40px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbarContainer .hamburgerLines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #333;
+        margin-bottom: 5em;
+        padding-left: -10em;
+    }
+    .navbarContainer .hamburgerLines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+    .navbarContainer .hamburgerLines .line2{
+        transition: transform 0.4s ease-in-out;
+    }
+    .navbarContainer .hamburgerLines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navbar .menuItems{
+        padding-top: 10em;
+        background-color: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translateX(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0 10px 0 #aaa;
+    }
+
+    .navbar .menuItems li{
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 150px;
+        font-size: 3rem;
+    }
+
+    .navbarContainer input[type="checkbox"]:checked~ .menuItems{
+        transform: translateX(0);
+        /* transform: translateY(0); */
+    }
+    .navbarContainer input[type="checkbox"]:checked~ .hamburgerLines .line1{
+        transform: rotate(45deg);
+    }
+    .navbarContainer input[type="checkbox"]:checked~ .hamburgerLines .line2{
+        transform: scaleY(0);
+    }
+    .navbarContainer input[type="checkbox"]:checked~ .hamburgerLines .line3{
+        transform: rotate(-45deg);
+    }
+
+    .foodContainer{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .foodType:not(:last-child){
+        margin-bottom: 3rem;
+    }
+
+    .foodType{
+        box-shadow: 5px 5px 10px 0px #aaa;
+    }
+    .imgContainer{
+        margin: 0;
+    }
+}
+@media(max-width:500px){
+    html{
+        font-size: 50%;
+    }
+    .testimonialContainer{
+        flex-direction: column;
+        text-align: center;
+    }
+    .foodMenuContainer img{
+        margin: auto;
+    }
+    .foodMenuItem{
+        flex-direction: column;
+        text-align: center;
+    }
+    .formContainer{
+        width: 90%;
+    }
+    .contactContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .contactImg{
+        width: 90%;
+        margin: 3rem auto;
+    }
+}
+@media(orientation: landscape) and (max-height:500px){
+    .showcaseArea{
+        height: 50vmax;
+    }
+}
