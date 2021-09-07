@@ -1,0 +1,542 @@
+@import "./variables";
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+//? ###################################utility classes ##################################
+.container{
+    width: 80vw;
+    margin: auto;
+}
+//? ################################### navbar #################################### 
+nav{
+    background-color: #fff;
+    opacity: 70%;
+    width: 100%;
+    box-shadow: 0px 0px 20px 0px #444;
+    z-index: 999;
+    position: fixed;
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo{
+        font-size: 4rem;
+        font-weight: 600;
+        margin-left: 1em;
+    }
+    ul{
+        li{
+            list-style: none;
+            font-size: 2rem;
+            display: inline-block;
+            padding: .7em .5em;
+            a{
+                text-decoration: none;
+                color: #111;
+                font-size: 2rem;
+                &:hover{
+                    border-bottom: 1px solid $firstColor;
+                    color: $firstColor;
+                    transition: all ease-in-out .1s;
+                }
+            }
+        }
+    }
+}
+//? ########################################## HOME DESIGN ############################################
+.home{
+    height: 55vh;
+    background: url(../images/header-image2.jpg);
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 3rem;
+    }
+    p{
+        font-size: 3rem;
+        font-weight: 400;
+        text-align: center;
+    }
+    a{
+        border: $firstColor 2px solid ;
+        font-size: 2.5rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: $firstColor;
+        margin-top: .5em;
+        padding: .2em .7em;
+        border-radius: 3rem;
+        &:hover{
+            background-color: #fff;
+            color: $firstColor;
+            transition: all ease-in-out .1s;
+        }
+    }
+}
+//? ########################################### About Us design #####################################
+.about{
+    background-color: #efefef;
+    // height: 80vh;
+    .container{
+        padding: 30em 0em;
+        display: flex;
+        flex-direction: row;
+        .aboutBox{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            h3{
+                font-size: 2.5rem;
+                color: #666;
+            }
+            h1{
+                font-size: 3rem;
+                color: #333;
+            }
+            p{
+                font-size: 1.5rem;
+                color: #555;
+                font-weight: 400;
+            }
+            animation: leftToRight 1s ease-in-out;
+        }
+        .imgBox{
+            position: relative;
+            width: 100%;
+            img{
+                width: 100%;
+                height: 90%;
+                margin-top: auto;
+                object-fit: contain;
+            }
+            animation: rightToLeft 1s ease-in-out;
+        }
+    }
+}
+//? ################################ about page animations#################################
+@keyframes leftToRight{
+        0%{
+            right: 100%;
+    }
+    100%{
+            right: 0%;
+        }
+    }
+@keyframes rightToLeft{
+        0%{
+            left: 100%;
+    }
+    100%{
+            left: 0%;
+        }
+    }
+//? ################################ food design #######################################
+.food{
+    .container{
+        h1{
+            font-size: 3rem;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+            color: #555;
+        }
+        .showcase{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20em;
+            margin-bottom: 20em;
+            img{
+                width: 100%;
+            }
+            h2{
+                font-size: 3rem;
+                font-weight: 500;
+                color: #fff;
+                margin-bottom: .7em;
+                text-align: center;
+            }
+            a{
+                font-size: 2rem;
+                text-decoration: none;
+                display: inline;
+                margin: auto;
+                margin-top: 1em;
+                border: 2px solid $firstColor;
+                background-color: $firstColor;
+                color: #fff;
+                padding: .1em .5em;
+                border-radius: 1rem;
+                &:hover{
+                    color: $firstColor;
+                    background-color: #fff;
+                }
+            }
+            .foods{
+                margin-left: 20em;
+                position: relative;
+                .content{
+                    transition: all .3s ease-in-out;
+                    position: absolute;
+                    opacity: 0;
+                    top: 50%;   
+                    left: 0%;
+                    z-index: 9;
+                }
+                &::after{
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0.651);
+                    opacity: 0;
+                    transition: all .3s ease-in-out;
+                    transform: scaleY(0);
+                    transform-origin: 100% 100%;
+                }
+                &:hover::after{
+                    opacity: 1;
+                    transform: scaleY(1);
+                    
+                }
+                &:hover{
+                    .content{
+                        opacity: 1;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+//? ############################################## Menu Design ##################################### 
+.menu{
+    h1{
+        font-size: 4.5rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 3em;
+        margin-bottom: 1em;
+        font-weight: 400;
+        color: #666;
+
+    }
+    .foodMenu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .foodMenu1{
+            display: flex;
+            flex-direction: column;
+        }
+        .foodMenu2{
+            display: flex;
+            flex-direction: column;
+        }
+        .menuItem{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .tag{
+            margin: 50em;
+        }
+        img{
+            width: 25rem;
+            height: 25rem;
+            border-radius: 50%;
+            margin-top: 100em;
+        }
+        h3{
+            font-size: 2rem;
+            font-weight: 400;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+        span{
+            color: $firstColor;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+    }
+}
+//? ########################################## testimonials design #######################################
+.testimonials{
+    background-color: #efefef;
+    margin-top: 30em;
+    padding-bottom: 30em;
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        color: #555;
+    }
+    .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .img{
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            border-radius: 100%;
+            width: 20rem;
+            height: 20rem;
+            margin-top: 100em;
+            object-fit: cover;
+        }
+        p{
+            font-size: 2.5rem;
+            text-align: center;
+            color: #666;
+        }
+        h2{
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+}
+//? #################################### Contact Design ##########################################
+.contact{
+    padding-top: 25em;
+    padding-bottom: 25em;
+    background-color: #ddd;
+    .container{
+        display: flex;
+        .ContactImgBox{
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .form{
+            background-color: #fff;
+            width: 100%;
+            h1{
+                font-size: 3.5rem;
+                font-weight: 400;
+                padding-left: .2em;
+                padding-top: .4em;
+                color: #555;
+            }
+            form{
+                padding: 20em;
+                input{
+                    width: 100%;
+                    font-size: 2rem;
+                    border: none;
+                    outline: none;
+                    margin-bottom: .2em;
+                    border-bottom: #ccc 2px solid;
+                    &:hover{
+                        border-bottom: 2px $firstColor solid;
+                    }
+                }
+                textarea{
+                    width: 100%;
+                    font-size: 1.5rem;
+                    border: 2px #ccc solid;
+                    outline: none;
+                    &:hover{
+                        border: 2px $firstColor solid;
+                    }
+                }
+                input[type="submit"]{
+                    color: #fff;
+                    background-color: $firstColor;
+                    outline: none;
+                    border: none;
+                    width: 25%;
+                    margin-top: .2em;
+                    border-radius: 2rem;
+                    padding: .2em 0em;
+                    border: 2px solid $firstColor;
+                    &:hover{
+                        background-color: #fff;
+                        color: $firstColor;
+                        border: 2px solid $firstColor;
+                    }
+                }
+            }
+        }
+    }
+}
+//? ######################################## footer design #######################################
+footer{
+    background-color: #333;
+    padding: 4em 1em;
+    p{
+        font-size: 2.5rem;
+        color: #fff;
+        text-align: center;
+    }
+
+}
+//? ################################################humberger menu desing#######################################
+.humWrapper{
+    position: relative;
+    // position: fixed;
+}
+.humburger{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    background-color: $firstColor;
+    padding: 5em;
+    border-radius: 1rem;
+    opacity: 80%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 22;
+    display: none;
+    // border: 1px solid red;
+    img{
+        width: 4.5rem;
+    }
+}
+.mobileNav{
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    z-index:100;
+    opacity: 90%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 20em;
+    padding-top: 30em;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out ;
+    li{
+        list-style: none;
+        padding-bottom: 30em;
+        a{
+            text-decoration: none;
+            color: #555;
+            font-size: 4rem;
+            &:hover{
+                color: $firstColor;
+                transition: all .1s ease-in-out;
+            }
+        }
+    }
+}
+.open{
+    transform: translateX(0);
+}
+
+//? ########################################## responsiveness ################################################
+@media(max-width:1000px){
+    html{
+        font-size: 50%;
+    }
+    .contact{
+        .container{
+            flex-direction: column;
+        }
+    }
+}
+@media(max-width: 700px){
+    html{
+        font-size: 40%;
+    }
+    .food{
+        .container{
+            .showcase{
+                flex-direction: column;
+            }
+            img{
+                padding-bottom: 50em;
+
+            }
+        }
+    }
+    .menu{
+        .foodMenu{
+            flex-direction: column;
+        }
+    }
+}
+@media(max-width:600px){
+    .testimonials{
+        .cards{
+            flex-direction: column;
+        }
+        .card{
+            padding-bottom: 70em;
+        }
+    }
+    .about{
+        .container{
+            flex-direction: column;
+            .aboutBox{
+                padding-bottom: 30em;
+            }
+        }
+    }
+    nav{
+        display: none;
+    }
+    .humburger{
+        display: block;
+    }
+}
+@media(max-width:420px){
+.mobileNav{
+    li{
+        a{
+            font-size: 3rem;
+        }
+    }
+}
+}
+@media(max-width:350px){
+    .menu{
+        .foodMenu{
+            .menuItem{
+                flex-direction: column;
+                .tag{
+                    h3,p{
+                        text-align: center;
+                    }
+                    span{
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:300px){
+    .mobileNav{
+        li{
+            a{
+                font-size: 2.5rem;
+            }
+        }
+    }
+    }
