@@ -85,6 +85,7 @@ nav{
 //? ########################################### About Us design #####################################
 .about{
     background-color: #efefef;
+    // height: 80vh;
     .container{
         padding: 30em 0em;
         display: flex;
@@ -395,6 +396,7 @@ footer{
 //? ################################################humberger menu desing#######################################
 .humWrapper{
     position: relative;
+    // position: fixed;
 }
 .humburger{
     position: fixed;
@@ -410,6 +412,7 @@ footer{
     cursor: pointer;
     z-index: 22;
     display: none;
+    // border: 1px solid red;
     img{
         width: 4.5rem;
     }
